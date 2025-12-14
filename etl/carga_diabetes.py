@@ -11,7 +11,7 @@ PASSWORD = os.getenv("POSTGRES_PASSWORD")
 HOST = os.getenv("POSTGRES_HOST", "localhost")
 
 # Leo el CSV limpio
-csv_path = "/app/data/cleaned/diabetes_cleaned.csv"
+csv_path = "./data/cleaned/diabetes_cleaned.csv"
 df = pd.read_csv(csv_path)
 
 # Conecto a PostgreSQL con reintentos por si la base de datos no está lista
