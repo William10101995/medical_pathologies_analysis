@@ -3,11 +3,11 @@ services:
     image: postgres:18
     container_name: postgres_diabetes
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin123
-      POSTGRES_DB: diabetes_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "5432:5432"
+      - ${POSTGRES_HOST_PORT}:${POSTGRES_CONTAINER_PORT}
     restart: always
     volumes:
       - postgres_diabetes_data:/var/lib/postgresql/
@@ -16,10 +16,10 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin_diabetes
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     ports:
-      - "5050:80"
+      - ${PGADMIN_HOST_PORT}:${PGADMIN_CONTAINER_PORT}
     restart: always
     depends_on:
       - db
@@ -28,7 +28,7 @@ services:
     image: metabase/metabase:latest
     container_name: metabase_diabetes
     ports:
-      - "3000:3000"
+      - ${METABASE_HOST_PORT}:${METABASE_CONTAINER_PORT}
     restart: always
     volumes:
       - metabase_diabetes_data:/metabase-data
@@ -38,10 +38,10 @@ services:
     build: ./dw_load
     container_name: etl_diabetes
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin123
-      POSTGRES_DB: diabetes_db
-      POSTGRES_HOST: db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST: ${POSTGRES_HOST}
     volumes:
       - ./data:/app/data
     depends_on:
