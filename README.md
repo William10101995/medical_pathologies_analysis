@@ -22,12 +22,6 @@ Este proyecto tiene como objetivo analizar datos relacionados con la diabetes ut
    ```
    http://localhost:3000
    ```
-4. Configura Metabase para conectarse a la base de datos PostgreSQL utilizando las siguientes credenciales:
-   - Host: `db`
-   - Puerto: `5432`
-   - Nombre de la base de datos: `diabetes_db`
-   - Usuario: `admin`
-   - Contraseña: `admin123`
 
 ## Exploración y limpieza de datos desde los notebooks (opcional)
 
