@@ -1,6 +1,6 @@
-# Diabetes Analysis
+# Análisis de Patologías Médicas
 
-Este proyecto tiene como objetivo analizar datos relacionados con la diabetes utilizando **Metabase** para visualizar los datos y **PostgresSQL** para almacenarlos.
+Este proyecto tiene como objetivo analizar datos relacionados con patologías médicas utilizando **Metabase** para visualizar los datos, **PostgresSQL** para almacenarlos y **Python** para su exploración y limpieza.
 
 ## Pre-requisitos
 
@@ -11,8 +11,8 @@ Este proyecto tiene como objetivo analizar datos relacionados con la diabetes ut
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/William10101995/diabetes-analysis.git
-   cd diabetes-analysis
+   git clone https://github.com/William10101995/medical_pathologies_analysis.git
+   cd medical_pathologies_analysis
    ```
 2. Construye y levanta los contenedores de Docker:
    ```bash
